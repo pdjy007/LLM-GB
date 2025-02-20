@@ -1,0 +1,172 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Body */
+body {
+    background: linear-gradient(135deg, #1e1e2e, #252538);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+/* Floating Effect */
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 12px 40px rgba(255, 118, 155, 0.5);
+}
+
+/* Heading */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Input Box */
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    outline: none;
+    resize: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    backdrop-filter: blur(5px);
+    margin-bottom: 15px;
+    box-shadow: inset 0px 0px 15px rgba(255, 255, 255, 0.2);
+    transition: 0.3s ease;
+}
+
+/* Input Glow Effect */
+textarea:focus {
+    border-color: #ff758c;
+    box-shadow: 0px 0px 10px #ff758c;
+}
+
+/* Glowing Buttons */
+button {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+/* Button Hover - Pulse Effect */
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 8px 20px rgba(255, 118, 155, 0.7);
+}
+
+/* Glowing Border Effect */
+button::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #fad0c4);
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+button:hover::before {
+    opacity: 1;
+}
+
+/* Output Box */
+.output {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    color: #f8f8f8;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.2);
+    min-height: 50px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+/* Output Glow Effect */
+.output:hover {
+    border-color: #ff7eb3;
+    box-shadow: 0px 0px 12px #ff7eb3;
+}
+
+/* Loader Animation */
+.loader {
+    display: none;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #ff758c;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 15px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
